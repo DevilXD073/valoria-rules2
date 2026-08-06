@@ -103,4 +103,87 @@ export const ruleSections: RuleSection[] = [
       },
     ],
   },
-];
+  {
+    id: "gameplay",
+    icon: "🎮",
+    title: "Gameplay Rules",
+    rules: [
+      {
+        title: "Vision Logging",
+        description:
+          "If a player has seen you or is actively engaging with you, you may not use commands or log out to escape combat.",
+      },
+      {
+        title: "Spawn Vision Rule",
+        description:
+          "Players in combat may not enter spawn to escape. Entering spawn while not in combat is allowed.",
+      },
+      {
+        title: "Naked Killing",
+        description:
+          "Purposely giving items to an unarmed player just to kill them counts as naked killing.",
+      },
+      {
+        title: "Hack Reports",
+        description:
+          "Accusing players without evidence will not result in punishment. Use recordings whenever possible.",
+      },
+      {
+        title: "Screenshare",
+        description:
+          "Staff may request a screenshare during investigations. Refusing may result in punishment.",
+      }
+    ]
+  },
+
+  {
+    id: "voice",
+    icon: "🎤",
+    title: "Voice Chat Rules",
+    rules: [
+      {
+        title: "No earrape or mic spam."
+      },
+      {
+        title: "No music bot spam."
+      },
+      {
+        title: "Keep soundboards and voice changers reasonable."
+      },
+      {
+        title: "No NSFW or gore in voice chats.",
+        punishment: "Permanent Ban"
+      },
+      {
+        title: "Do not expose inappropriate content on camera.",
+        punishment: "Permanent Ban"
+      },
+      {
+        title: "Get everyone's permission before recording a voice chat unless collecting evidence."
+      }
+    ]
+  },
+
+  {
+    id: "text",
+    icon: "💬",
+    title: "Text Chat Rules",
+    rules: [
+      {
+        title: "No spam or flooding chat."
+      },
+      {
+        title: "No emoji or sticker spam."
+      },
+      {
+        title: "Do not misuse media channels."
+      },
+      {
+        title: "Do not send malicious or misleading links."
+      },
+      {
+        title: "Do not advertise other servers or communities.",
+        punishment: "Permanent Ban"
+      }
+    ]
+  }
