@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ValoriaSMP — ARC 4 Phase System</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background:
+                radial-gradient(circle at top, #17152d 0%, #09090f 45%, #050507 100%);
+            color: #fff;
+            min-height: 100vh;
+            padding: 50px 20px;
+        }
+
+        .container {
+            max-width: 1250px;
+            margin: auto;
+        }
+
+        /* HEADER */
+
+        header {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .brand {
+            font-size: 15px;
+            letter-spacing: 5px;
+            color: #9da4ff;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        h1 {
+            font-size: clamp(36px, 6vw, 68px);
+            font-weight: 900;
+            letter-spacing: -2px;
+        }
+
+        .subtitle {
+            margin-top: 10px;
+            color: #8f91a5;
+            font-size: 16px;
+        }
+
+        /* PHASE GRID */
+
+        .phases {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .phase {
+            position: relative;
+            background: rgba(15, 15, 24, 0.9);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 22px;
+            padding: 28px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,.35);
+            transition: .25s ease;
+        }
+
+        .phase:hover {
+            transform: translateY(-6px);
+            border-color: rgba(140,145,255,.35);
+        }
+
+        .phase::before {
+            content: "";
+            position: absolute;
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            filter: blur(70px);
+            opacity: .15;
+            top: -80px;
+            right: -60px;
+            background: #777cff;
+        }
+
+        .phase-number {
+            color: #888dff;
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .phase h2 {
+            margin-top: 7px;
+            font-size: 27px;
+        }
+
+        .phase-description {
+            color: #77798c;
+            font-size: 13px;
+            margin-top: 5px;
+            margin-bottom: 25px;
+        }
+
+        /* STATS */
+
+        .stats {
+            display: flex;
+            flex-direction: column;
+            gap: 11px;
+        }
+
+        .stat {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 14px;
+            background: rgba(255,255,255,.035);
+            border: 1px solid rgba(255,255,255,.055);
+            border-radius: 12px;
+        }
+
+        .stat-name {
+            color: #a5a6b5;
+            font-size: 13px;
+        }
+
+        .stat-value {
+            font-weight: 800;
+            font-size: 14px;
+            text-align: right;
+        }
+
+        /* LOCKED / UNLOCKED */
+
+        .locked {
+            color: #77798b;
+        }
+
+        .unlocked {
+            color: #75e6a5;
+        }
+
+        /* PHASE 3 */
+
+        .phase-three {
+            border-color: rgba(125,130,255,.25);
+            box-shadow:
+                0 20px 70px rgba(80,80,255,.12),
+                inset 0 0 40px rgba(100,100,255,.025);
+        }
+
+        .phase-three .phase-number {
+            color: #b1b4ff;
+        }
+
+        .phase-three::after {
+            content: "ENDGAME";
+            position: absolute;
+            top: 18px;
+            right: 18px;
+            font-size: 9px;
+            font-weight: 900;
+            letter-spacing: 2px;
+            color: #8d92ff;
+            border: 1px solid rgba(141,146,255,.3);
+            padding: 6px 9px;
+            border-radius: 20px;
+        }
+
+        /* FOOTER */
+
+        footer {
+            text-align: center;
+            margin-top: 38px;
+            color: #555768;
+            font-size: 12px;
+            letter-spacing: 1px;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 900px) {
+            .phases {
+                grid-template-columns: 1fr;
+                max-width: 600px;
+                margin: auto;
+            }
+
+            body {
+                padding: 35px 15px;
+            }
+
+            header {
+                margin-bottom: 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <header>
+        <div class="brand">VALORIASMP</div>
+        <h1>ARC 4</h1>
+        <div class="subtitle">Phase System</div>
+    </header>
+
+
+    <main class="phases">
+
+        <!-- PHASE 1 -->
+
+        <section class="phase">
+
+            <div class="phase-number">Phase 01</div>
+            <h2>Starter</h2>
+            <div class="phase-description">
+                The beginning of the progression.
+            </div>
+
+            <div class="stats">
+
+                <div class="stat">
+                    <span class="stat-name">🍎 Golden Apples</span>
+                    <span class="stat-value">128</span>
+                </div>
+
+                <div class="stat">
+                    <span class="stat-name">🧪 XP Bottles</span>
+                    <span class="stat-value">3 Stacks</span>
+                </div>
+
+                <div class="stat">
+                    <span class="stat-name">🧪 Pots</span>
+                    <span class="stat-value">3 Each</span>
+                </div>
+
+                <div class="stat">
+                    <span class="stat-name">⚡ Strength</span>
+                    <span class="stat-value">I</span>
+                </div>
+
+                <div class="stat">
+                    <span class="stat-name">💨 Speed</span>
+                    <span class="stat-value">I</span>
+                </div>
+
+                <div class="stat">
+                    <span class="stat-name">⚔️ Sharpness</span>
+                    <span class="stat-value">III</span>
+                </div>
+
+                <div class="stat">
+                    <span class="stat-name">🛡️ Protection</span>
+                    <span class="stat-value">III</span>
+                </div>
+
+                <div class="stat">
+                    <span class="stat-name">🟣 Pearls</span>
+                    <span class="stat-value">2 Stacks</span>
+                </div>
+
+                <div class="stat">
+                    <span class="stat-name">⏱️ Pearl Cooldown</span>
+                    <span class="stat-value">10 Seconds</span>
+                </div>
+
+                <div class="stat">
+                    <span class="stat-name">🍎 Gapple Cooldown</span>
+                    <span class="stat-value">15 Seconds</span>
+                </div>
+
+                <div class="stat">
+                    <span class="stat-name">🛡️ Totem</span>
+                    <span class="stat-value locked">LOCKED</span>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- PHASE 2 -->
+
+        <section class="phase">
+
+            <div class="phase-number">Phase 02</div>
+            <h2>Upgraded</h2>
+            <div class="phase-description">
+                Stronger resources and PvP progression.
+            </div>
+
+            <div class="stats">
+
+                <div class="stat">
+                    <span class="stat-name">🍎 Golden Apples</span>
+                    <span class="stat-value">160</span>
+                </div>
+
+                <div class="stat">
+                    <span class="stat-name">🧪 XP Bottles</span>
+                    <span class="stat-value">4 Stacks</span>
+                </div>
+
+                <div class="stat">
+                    <span class="stat-name">🧪 Pots</span>
+                    <span class="stat-value">4 Each</span>
+                </div>
+
+                <div class="stat">
+                    <span class="stat-name">⚡ Strength</span>
+                    <span class="stat-value">I</span>
+                </div>
+
+                <div class="stat">
+                    <span class="stat-name">💨 Speed</span>
+                    <span class="stat-value">I</span>
+                </div>
+
+                <div class="stat">
+                    <span class="stat-name">⚔️ Sharpness</span>
+                    <span class="stat-value">IV</span>
+                </div>
+
+                <div class="stat">
+                    <span class="stat-name">🛡️ Protection</span>
+                    <span class="stat-value">III</span>
+                </div>
+
+                <div class="stat">
+                    <span class="stat-name">🟣 Pearls</span>
+                    <span class="stat-value">2 Stacks</span>
+                </div>
+
+                <div class="stat">
+                    <span class="stat-name">⏱️ Pearl Cooldown</span>
+                    <span class="stat-value">8 Seconds</span>
+                </div>
+
+                <div class="stat">
+                    <span class="stat-name">🍎 Gapple Cooldown</span>
+                    <span class="stat-value">12 Seconds</span>
+                </div>
+
+                <div class="stat">
+                    <span class="stat-name">🛡️ Totem</span>
+                    <span class="stat-value locked">LOCKED</span>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- PHASE 3 -->
+
+        <section class="phase phase-three">
+
+            <div class="phase-number">Phase 03</div>
+            <h2>Endgame</h2>
+            <div class="phase-description">
+                Maximum progression and Totems unlocked.
+            </div>
+
+            <div class="stats">
+
+                <div class="stat">
+                    <span class="stat-name">🍎 Golden Apples</span>
+                    <span class="stat-value">192</span>
+                </div>
+
+                <div class="stat">
+                    <span class="stat-name">🧪 XP Bottles</span>
+                    <span class="stat-value">5 Stacks</span>
+                </div>
+
+                <div class="stat">
+                    <span class="stat-name">🧪 Pots</span>
+                    <span class="stat-value">5 Each</span>
+                </div>
+
+                <div class="stat">
+                    <span class="stat-name">⚡ Strength</span>
+                    <span class="stat-value">II</span>
+                </div>
+
+                <div class="stat">
+                    <span class="stat-name">💨 Speed</span>
+                    <span class="stat-value">II</span>
+                </div>
+
+                <div class="stat">
+                    <span class="stat-name">⚔️ Sharpness</span>
+                    <span class="stat-value">V</span>
+                </div>
+
+                <div class="stat">
+                    <span class="stat-name">🛡️ Protection</span>
+                    <span class="stat-value">IV</span>
+                </div>
+
+                <div class="stat">
+                    <span class="stat-name">🟣 Pearls</span>
+                    <span class="stat-value">3 Stacks</span>
+                </div>
+
+                <div class="stat">
+                    <span class="stat-name">⏱️ Pearl Cooldown</span>
+                    <span class="stat-value">5 Seconds</span>
+                </div>
+
+                <div class="stat">
+                    <span class="stat-name">🍎 Gapple Cooldown</span>
+                    <span class="stat-value">10 Seconds</span>
+                </div>
+
+                <div class="stat">
+                    <span class="stat-name">🛡️ Totem</span>
+                    <span class="stat-value unlocked">UNLOCKED</span>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        VALORIASMP • ARC 4
+    </footer>
+
+</div>
+
+</body>
+</html>
